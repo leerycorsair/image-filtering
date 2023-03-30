@@ -1,0 +1,35 @@
+% Подключения пакетов фигур
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{wrapfig}
+\RequirePackage{tikzscale}
+
+% Подключения пакета графиков
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+% Команда создания рисунка
+\newcommand{\putimage}[5]
+{
+    \begin{figure}[#2]
+        \center{\includegraphics[width=#3\columnwidth]{inc/img/#1}}
+        \caption{#4}
+        \label{fig: #5}
+    \end{figure}
+}
+
+\newcommand{\figuresvg}[5]
+{
+    \begin{figure}[#2]
+        \centerline{\includesvg[inkscapelatex=false, width=#3\columnwidth]{inc/svg/#1}}
+        \caption{#4}
+        \label{fig: #5}
+    \end{figure}
+}
+
+\newcommand{\pressvg}[1]
+{
+    \begin{figure}[h]
+        \centerline{\includesvg[angle=90,origin=c,inkscapelatex=false, width=1.1\columnwidth]{inc/svg/pres/#1}}
+    \end{figure}
+}
